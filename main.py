@@ -21,7 +21,7 @@ text_widget = tk.Text(root, wrap=tk.WORD)
 text_widget.pack(padx=20, pady=20, fill="both", expand=True)
 
 save_button = tk.Button(root, text="Save", command=save_to_file)
-save_button.pack(pady=10)
+save_button.pack(pady=0)
 
 status_label = tk.Label(root, text="", padx=10, pady=10, bg="#000000")
 status_label.pack()
@@ -36,5 +36,7 @@ def open_text_file():
 
 # To Do - Make this clear text after opening a file and adjust button height 
 open_button = tk.Button(root,text='Open a File',command=open_text_file)
-open_button.pack(pady=10)
+open_button.pack(pady=0, anchor=tk.CENTER)
+
+
 root.mainloop()
