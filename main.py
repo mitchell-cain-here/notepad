@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox, filedialog
 from tkinter import filedialog as fd
+import os
 
 def save_to_file():
     file_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
@@ -32,9 +33,10 @@ def open_text_file():
         ('All files', '*.*')
     )
     f = fd.askopenfile(filetypes=filetypes)
+    text_widget.delete('1.0', tk.END)
     text_widget.insert('1.0', f.readlines())
 
-# To Do - Make this clear text after opening a file and adjust button height 
+
 open_button = tk.Button(root,text='Open a File',command=open_text_file)
 open_button.pack(pady=0, anchor=tk.CENTER)
 
